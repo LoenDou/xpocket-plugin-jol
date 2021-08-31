@@ -13,7 +13,7 @@ import java.util.Arrays;
  * @description 用于实现每个命令的核心逻辑，一个或者多个命令指向一个类。
  * @date 7/31/2021 12:29
  */
-@CommandInfo(name = "help", usage = "Usage: <mode> [optional arguments]*", index = 0)
+@CommandInfo(name = "help", usage = "How to use JOL", index = 0)
 @CommandInfo(name = "internals", usage = "Show the object internals: field layout and default contents, object header.", index = 1)
 @CommandInfo(name = "externals", usage = "Show the object externals: the objects reachable from a given instance.", index = 2)
 @CommandInfo(name = "estimates", usage = "Simulate the class layout in different VM modes.", index = 3)
