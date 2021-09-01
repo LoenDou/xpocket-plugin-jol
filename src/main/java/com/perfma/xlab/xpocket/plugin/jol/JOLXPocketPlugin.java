@@ -155,8 +155,8 @@ public class JOLXPocketPlugin extends AbstractXPocketPlugin {
         }*/
     }
 
-    //打印帮助信息
-    private void printHelp(){
+    //打印帮助信息  原生方法  # 弃用   使用改造后的提示
+    private void printHelp_native(){
         try {
             jolProcess = Runtime.getRuntime().exec("java -jar " + TMP_LIB_PATH + JOL_LIB + " help");
             try (InputStream in = jolProcess.getInputStream()){
@@ -170,6 +170,30 @@ public class JOLXPocketPlugin extends AbstractXPocketPlugin {
             e.printStackTrace();
             process.output(e.getMessage());
         }
+    }
+
+    //打印帮助信息
+    private void printHelp(){
+
+        //line separator
+        String lineSeparator = System.getProperty("line.separator");
+
+        //print info
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Usage:<mode> -path: [optional arguments]*: \n\t mode(选择命令类型). \n\t -path:(要查看的Java类所在的绝对路径) \n\t [optional arguments]*(要查看的Java类名称，不用带后缀.class).").append(lineSeparator).append(lineSeparator);
+        sb.append("Available modes: ").append(lineSeparator);
+
+        sb.append(String.format("  %20s: %s%n", "internals", "Show the object internals: field layout and default contents, object header(显示对象内部:字段布局和默认内容，对象头)."))
+                .append(String.format("  %20s: %s%n", "externals", "Show the object externals: the objects reachable from a given instance(显示对象外部:从实例可达的对象)."))
+                .append(String.format("  %20s: %s%n", "footprint", "Estimate the footprint of all objects reachable from a given instance(估计从实例可达的对象的引用信息)."))
+                .append(String.format("  %20s: %s%n", "estimates", "Simulate the class layout in different VM modes(模拟在不同VM模式下类的布局)."))
+                .append(String.format("  %20s: %s%n", "heapdumpstats", "Consume the heap dump and print the most frequent instances(使用heap dump并打印最频繁的实例)."))
+                .append(String.format("  %20s: %s%n", "shapes", "Dump the object shapes present in JAR files or heap dumps(Dump JAR文件或heap dumps中存在的对象结构)."))
+                .append(String.format("  %20s: %s%n", "string-compress", "Consume the heap dumps and figures out the savings attainable with compressed strings(使用heap dumps并计算压缩字符串可获得的节省)."));
+
+        process.output(sb.toString());
+
     }
 
     //打印internals等逻辑的信息
@@ -199,9 +223,7 @@ public class JOLXPocketPlugin extends AbstractXPocketPlugin {
             String exeCmd = classPath.isEmpty()
                     ? "java " + " -jar " + TMP_LIB_PATH + JOL_LIB + " " + cmd + " " + className
                     : "java " + "-Xbootclasspath/a:" + classPath + " -jar " + TMP_LIB_PATH + JOL_LIB + " " + cmd + " " + className;
-            /*process.output(classPath);
-            process.output(className);
-            process.output(exeCmd);*/
+
             jolProcess = Runtime.getRuntime().exec(exeCmd);
             try (InputStream in = jolProcess.getInputStream()){
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
