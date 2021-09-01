@@ -1,15 +1,22 @@
 # xpocket-plugin-jol
 The JOL Tool plugin for xpocket.
 
-###简介
+### 简介
+
 JOL(Java Object Layout)是分析 JVM 中对象布局的小工具箱。这些工具大量使用 Unsafe、JVMTI 和 Serviceability Agent (SA) 来解码实际的对象布局、足迹和引用。这使得 JOL 比依赖堆转储、规范假设等的其他工具更加准确.
 
-###操作指南
-####使用
+### 操作指南
+
+#### 使用
+
 `use jol@OPENJDK`
-####帮助
+
+#### 帮助
+
 `help`
-####可用选项
+
+#### 可用选项
+
 `internals                      Show the object internals: field layout and default contents, object header(显示对象内部:字段布局和默认内容 ，对象头).`
 
 `externals                      Show the object externals: the objects reachable from a given instance(显示对象外部:从实例可达的对象).`
@@ -24,7 +31,8 @@ JOL(Java Object Layout)是分析 JVM 中对象布局的小工具箱。这些工�
 
 `string-compress                Consume the heap dumps and figures out the savings attainable with compressed strings(使用heap dumps并计算 压缩字符串可获得的节省).`
 
-####示例
+#### 示例
+
 Linux/macOS环境 : internals -path:/home/user/test.jar ClassX
 
 Windows环境 : internals -path:D:\\test.jar ClassX \n\t 或者 internals -path:D:////test.jar ClassX
