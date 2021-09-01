@@ -31,7 +31,7 @@ string-compress                Consume the heap dumps and figures out the saving
 
 Linux/macOS环境 : internals -path:/home/user/test.jar ClassX
 
-Windows环境 : internals -path:D:\\test.jar ClassX \n\t 或者 internals -path:D:////test.jar ClassX
+Windows环境 : internals -path:D:\\test.jar ClassX 或者 internals -path:D:////test.jar ClassX
 
 ---
 JOL开源地址:https://github.com/openjdk/jol
