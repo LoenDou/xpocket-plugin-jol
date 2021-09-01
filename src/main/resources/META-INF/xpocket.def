@@ -1,8 +1,8 @@
 plugin-name=jol
 plugin-namespace=openjdk
 plugin-version=1.0.0-RELEASE
-plugin-description=JOL (Java Object Layout) is the tiny toolbox to analyze object layout in JVMs. These tools are using Unsafe, JVMTI, and Serviceability Agent (SA) heavily to decode the actual object layout, footprint, and references. This makes JOL much more accurate than other tools relying on heap dumps, specification assumptions, etc.
-usage-tips=1.Usage:<mode> -path: [optional arguments]*: \n mode(选择查看类型) \n -path:(要查看的Java类所在的绝对路径) \n [optional arguments]*(要查看的Java类名称，不用带后缀.class),可使用help获取mode详细帮助信息.\n 2.使用示例（Linux/macOS环境）:internas -path:/home/user/test.jar ClassX \n 3.使用示例（Windows环境）:internas -path:D:\test.jar ClassX 或者 internas -path:D:////test.jar ClassX
+plugin-description=JOL (Java Object Layout) is the tiny toolbox to analyze object layout in JVMs. These tools are using Unsafe, JVMTI, and Serviceability Agent (SA) heavily to decode the actual object layout, footprint, and references. This makes JOL much more accurate than other tools relying on heap dumps, specification assumptions, etc(JOL是分析 JVM 中对象布局的小工具箱。这些工具大量使用 Unsafe、JVMTI 和 Serviceability Agent (SA) 来解码实际的对象布局、足迹和引用。这使得 JOL 比依赖堆转储、规范假设等的其他工具更加准确).
+usage-tips=1.Usage:<mode> -path: [optional arguments]*: \n\t mode(选择命令类型),可使用help获取mode详细帮助信息. \n\t -path:(要查看的Java类所在的绝对路径) \n\t [optional arguments]*(要查看的Java类名称，不用带后缀.class) \n 2.使用示例(Linux/macOS环境):internals -path:/home/user/test.jar ClassX \n 3.使用示例(Windows环境):internals -path:D:\\test.jar ClassX \n\t 或者 internals -path:D:////test.jar ClassX
 plugin-author=Dou
 plugin-project=https://github.com/LoenDou/xpocket-plugin-jol
 tool-author=openJDK
