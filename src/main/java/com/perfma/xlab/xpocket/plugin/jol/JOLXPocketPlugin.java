@@ -17,11 +17,11 @@ import java.nio.file.Path;
 public class JOLXPocketPlugin extends AbstractXPocketPlugin {
 
     //Logo
-    private static final String LOGO = "       .'|   .'|=|`.     .'|      \n" +
-                                       "     .'  | .'  | |  `. .'  |      \n" +
-                                       "     |   | |   | |   | |   |      \n" +
-                                       "___  |   | `.  | |  .' |   |  ___ \n" +
-                                       "`._|=|__.'   `.|=|.'   |___|=|_.' \n";
+    private static final String LOGO = "        .'|   .'|=|`.     .'|      \n" +
+                                       "      .'  | .'  | |  `. .'  |      \n" +
+                                       "      |   | |   | |   | |   |      \n" +
+                                       " ___  |   | `.  | |  .' |   |  ___ \n" +
+                                       " `._|=|__.'   `.|=|.'   |___|=|_.' \n";
 
     //获取不同操作系统下的用户空间
     private static final String USER_HOME = System.getProperty("user.home");
